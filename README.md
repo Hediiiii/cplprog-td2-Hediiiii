@@ -27,36 +27,37 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 
 À chaque étape, validez vos modifications avec `git` et si nécessaire, exécutez le cycle maven adapté pour vérifier vos manipulations.
 
-1.  Quelles conventions utilise Maven pour l’arborescence des répertoires ?
-    > RÉPONDRE ICI
-1.  Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
+1.1.  Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
     1.  Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
-        > RÉPONDRE ICI
+        > Les fichiers sources se trouvent dans src/main et les test dans src/test.
     1. Quelles sont les coordonnées du projet ?
-        > RÉPONDRE ICI
+        >   <groupId>fr.uvsq.cprog</groupId>
+            <artifactId>mvnjunit</artifactId>
+            <version>1.0-SNAPSHOT</version>
     1. À quoi sert la propriété `project.build.sourceEncoding` ?
-        > RÉPONDRE ICI
+        > Cette propriété caractérise le type d'encodage utilisé.
     1. Quelles versions des sources et de la JVM sont utilisés ?
-        > RÉPONDRE ICI
+        > <maven.compiler.source> : 1.7 (Cela indique que le code source Java est compatible avec Java 1.7)
+          <maven.compiler.target> : 1.7 (Cela indique que le bytecode Java généré est compatible avec Java 1.7)
     1. Quelle version de JUnit est configurée ? À quoi sert la balise `scope` ?
-        > RÉPONDRE ICI
+        > Version de JUnit : 4.11
+          la balise scope permet dans le test de ne sera pas dans la compilation du programme mais il restera disponible pour les tests unitaires.
     1. À quoi sert la section `pluginManagement` ?
-        > RÉPONDRE ICI
-1.  Modifiez la configuration du projet de la façon suivante :
+        > La section pluginManagement dans le fichier POM permet de définir les versions des plugins Maven utilisées dans le projet.tion du projet de la façon suivante :
     1.  fixez la version des sources et des .class pour utiliser la version 17 de Java
     1.  utilisez la dernière version stable de JUnit 4 (cf. [MVNRepository](https://mvnrepository.com/))
 1.  Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
 1.  Quelle commande Maven permet de :
     1.  créer un `jar` du projet ?
-        > RÉPONDRE ICI
+        > mvn package
     1. lancer les tests ?
-        > RÉPONDRE ICI
+        > mvn test
     1. supprimer tous les fichiers issus de la compilation ?
-        > RÉPONDRE ICI
+        > mvn clean
 1.  Ajoutez une classe `ChaineCryptee` et une classe `ChaineCrypteeTest` dans les répertoires et packages appropriés.
     Supprimez les classes d'exemple `App` et `AppTest`.
 1.  Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
-    > RÉPONDRE ICI
+    > majuscule, caractère spéciaux, chaine vides 
 1.  Pour chaque cas de test,
     1. écrivez le test JUnit correspondant dans la classe de test,
     1. vérifiez qu’il échoue,
